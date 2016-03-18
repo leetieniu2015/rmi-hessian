@@ -3,8 +3,8 @@ package org.leetieniu.rmi;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 
-import org.leetieniu.rmi.service.HelloService;
-import org.leetieniu.rmi.service.impl.HelloServiceImpl;
+import org.leetieniu.rmi.service.RMIHelloService;
+import org.leetieniu.rmi.service.impl.RMIHelloServiceImpl;
 
 public class RMIServer {
 
@@ -13,10 +13,10 @@ public class RMIServer {
 			//java.rmi.server.hostname的设置必须在服务对象创建之前
 			System.setProperty("java.rmi.server.hostname", "localhost");
 			// 实例化实现了IService接口的远程服务ServiceImpl对象
-			HelloService service = new HelloServiceImpl();
+			RMIHelloService service = new RMIHelloServiceImpl();
 			
 			LocateRegistry.createRegistry(8808);  
-	        Naming.rebind("rmi://localhost:8808/hello", service);
+	        Naming.rebind("rmi://localhost:8808/helloRMI", service);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

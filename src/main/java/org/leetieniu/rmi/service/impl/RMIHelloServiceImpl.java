@@ -4,13 +4,13 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Date;
 
-import org.leetieniu.rmi.service.HelloService;
+import org.leetieniu.rmi.service.RMIHelloService;
 
-public class HelloServiceImpl extends UnicastRemoteObject implements HelloService {
+public class RMIHelloServiceImpl extends UnicastRemoteObject implements RMIHelloService {
 	
 	private static final long serialVersionUID = -3549810476643306251L;
 
-	public HelloServiceImpl() throws RemoteException {
+	public RMIHelloServiceImpl() throws RemoteException {
 		super();
 	}
 
